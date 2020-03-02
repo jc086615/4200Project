@@ -244,6 +244,11 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\EmployeeDetails\Create.cshtml" />
+    <Content Include="Views\EmployeeDetails\Delete.cshtml" />
+    <Content Include="Views\EmployeeDetails\Details.cshtml" />
+    <Content Include="Views\EmployeeDetails\Edit.cshtml" />
+    <Content Include="Views\EmployeeDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

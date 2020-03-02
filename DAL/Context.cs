@@ -11,9 +11,15 @@ namespace _4200Project.DAL
     {
         public Context() : base("name=DefaultConnection")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, _4200Project.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
 
         public DbSet<Employee> Employees { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+       
     }
 }
