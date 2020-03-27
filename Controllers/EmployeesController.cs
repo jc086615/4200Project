@@ -56,13 +56,12 @@ namespace _4200Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EID,FirstName,LastName,Phone,HomeOffice,BusinessUnit,Title,HireDate")] Employee employee)
+        public ActionResult Create([Bind(Include = "EID,FirstName,LastName,Phone,Email,HomeOffice,BusinessUnit,Title,HireDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
                 Guid EID;
                 Guid.TryParse(User.Identity.GetUserId(), out EID);
-                employee.Email = User.Identity.Name;
                 employee.EID = EID;
                 db.Employees.Add(employee);
                 try
