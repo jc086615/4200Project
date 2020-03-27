@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using _4200Project.DAL;
 using _4200Project.Models;
+using Microsoft.AspNet.Identity;
 
 namespace _4200Project.Controllers
 {
@@ -18,7 +19,15 @@ namespace _4200Project.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.Employees.ToList());
+
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(db.Employees.ToList());
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
         }
 
         // GET: Employees/Details/5
@@ -47,14 +56,26 @@ namespace _4200Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EID,FirstName,LastName,Phone,Email,HomeOffice,BusinessUnit,Title,HireDate")] Employee employee)
+        public ActionResult Create([Bind(Include = "EID,FirstName,LastName,Phone,HomeOffice,BusinessUnit,Title,HireDate")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                employee.EID = Guid.NewGuid();
+                Guid EID;
+                Guid.TryParse(User.Identity.GetUserId(), out EID);
+                employee.Email = User.Identity.Name;
+                employee.EID = EID;
                 db.Employees.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+
+                    return View("DuplicateUser");
+                }
+
             }
 
             return View(employee);
@@ -72,7 +93,16 @@ namespace _4200Project.Controllers
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            Guid EID;
+            Guid.TryParse(User.Identity.GetUserId(), out EID);
+            if (employee.EID == EID)
+            {
+                return View(User);
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
         }
 
         // POST: Employees/Edit/5
