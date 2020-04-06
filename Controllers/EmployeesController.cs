@@ -17,8 +17,17 @@ namespace _4200Project.Controllers
         private Context db = new Context();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+            var employees = from u in db.Employees select u;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(u =>
+                u.LastName.Contains(searchString)
+                || u.FirstName.Contains(searchString));
+                // if here, users were found so view them
+                return View(employees.ToList());
+            }
 
             if (User.Identity.IsAuthenticated)
             {
