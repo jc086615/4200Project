@@ -20,6 +20,6 @@ namespace _4200Project.DAL
             base.OnModelCreating(modelBuilder);
         }
 
-       
+        public System.Data.Entity.DbSet<_4200Project.Models.Recognition> Recognitions { get; set; }
     }
 }

@@ -171,6 +171,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RecognitionsController.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +181,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Recognition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -246,6 +248,11 @@
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\DuplicateUser.cshtml" />
     <Content Include="Views\Employees\NotAuthenticated.cshtml" />
+    <Content Include="Views\Recognitions\Create.cshtml" />
+    <Content Include="Views\Recognitions\Delete.cshtml" />
+    <Content Include="Views\Recognitions\Details.cshtml" />
+    <Content Include="Views\Recognitions\Edit.cshtml" />
+    <Content Include="Views\Recognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
