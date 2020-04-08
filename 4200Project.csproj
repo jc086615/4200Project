@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndividualRecognitionsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecognitionsController.cs" />
     <Compile Include="DAL\Context.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndividualRecognition.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recognition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -253,6 +255,11 @@
     <Content Include="Views\Recognitions\Details.cshtml" />
     <Content Include="Views\Recognitions\Edit.cshtml" />
     <Content Include="Views\Recognitions\Index.cshtml" />
+    <Content Include="Views\IndividualRecognitions\Create.cshtml" />
+    <Content Include="Views\IndividualRecognitions\Delete.cshtml" />
+    <Content Include="Views\IndividualRecognitions\Details.cshtml" />
+    <Content Include="Views\IndividualRecognitions\Edit.cshtml" />
+    <Content Include="Views\IndividualRecognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,50 @@
+﻿@model _4200Project.Models.IndividualRecognition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IndividualRecognition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfRecognition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfRecognition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.award)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.award)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RecognitionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
