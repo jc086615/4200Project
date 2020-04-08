@@ -18,7 +18,7 @@
         @Html.HiddenFor(model => model.RecognitionID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EID, "EID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EID, "Employee Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("EID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EID, "", new { @class = "text-danger" })
@@ -38,6 +38,14 @@
             <div class="col-md-10">
                 @Html.EnumDropDownListFor(model => model.award, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.award, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
             </div>
         </div>
 

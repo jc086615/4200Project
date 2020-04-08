@@ -11,6 +11,11 @@ namespace _4200Project.Models
         [Key]
         public System.Guid EID { get; set; }
 
+        [Display(Name = "Employee Name")]
+        public string FullName { get { return LastName + ", " + FirstName; } }
+        
+
+
         [Display(Name ="First Name")]
         [Required(ErrorMessage ="Employee first name is required")]
         [StringLength(20)]

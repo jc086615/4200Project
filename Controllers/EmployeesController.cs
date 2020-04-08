@@ -57,6 +57,9 @@ namespace _4200Project.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            
+            
+
             return View();
         }
 
@@ -105,7 +108,7 @@ namespace _4200Project.Controllers
             Guid.TryParse(User.Identity.GetUserId(), out EID);
             if (employee.EID == EID)
             {
-                return View(User);
+                return View(employee);
             }
             else
             {

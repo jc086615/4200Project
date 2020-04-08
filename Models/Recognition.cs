@@ -13,11 +13,17 @@ namespace _4200Project.Models
               // in the table and it is not the PK for the record
         public int RecognitionID { get; set; }
         //ID of person being recognized
+
+        [Display(Name = "Employee Name")]
         public Guid EID { get; set; }
         [ForeignKey(name: "EID")]
+     
 
+
+        
         public virtual Employee Employee { get; set; }
         
+
         [Display(Name = "Date of Recognition")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
@@ -36,5 +42,7 @@ namespace _4200Project.Models
             Innovation = 6,
             Balance = 7
         }
+
+        public string Comments  {get; set;}
     }
 }

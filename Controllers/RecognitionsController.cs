@@ -40,7 +40,7 @@ namespace _4200Project.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
-            ViewBag.EID = new SelectList(db.Employees, "EID", "FirstName");
+            ViewBag.EID = new SelectList(db.Employees, "EID", "FullName");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace _4200Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RecognitionID,EID,DateOfRecognition,award")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "RecognitionID,EID,DateOfRecognition,award,Comments")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace _4200Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RecognitionID,EID,DateOfRecognition,award")] Recognition recognition)
+        public ActionResult Edit([Bind(Include = "RecognitionID,EID,DateOfRecognition,award,Comments")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
