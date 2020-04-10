@@ -22,6 +22,6 @@ namespace _4200Project.DAL
 
         public System.Data.Entity.DbSet<_4200Project.Models.Recognition> Recognitions { get; set; }
 
-        public System.Data.Entity.DbSet<_4200Project.Models.IndividualRecognition> IndividualRecognitions { get; set; }
+         
     }
 }
