@@ -18,8 +18,14 @@ namespace _4200Project.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            var recognitions = db.Recognitions.Include(r => r.Employee);
-            return View(recognitions.ToList());
+            if (User.Identity.IsAuthenticated)
+            {
+                return View(db.Recognitions.ToList());
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
         }
 
         // GET: Recognitions/Details/5
