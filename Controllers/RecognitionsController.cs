@@ -27,7 +27,25 @@ namespace _4200Project.Controllers
                 return View("NotAuthenticated");
             }
         }
+        public ActionResult MyChart()
+        {
+            decimal Excellence = 0;
+            decimal Culture = 0;
+            decimal Stewardship = 0;
+            decimal Integrity = 0;
+            decimal Innovate = 0;
+            decimal Passion = 0;
+            decimal Balance = 0;
+            new System.Web.Helpers.Chart(width: 800, height: 200)
 
+            .AddSeries(
+                chartType: "column",
+                xValue: new[] { "Excellence", "Culture", "Stewardship", "Integrity", "Innovate", "Passion", "Balance" },
+                yValues: new[] { Excellence, Culture, Stewardship, Integrity, Innovate, Passion, Balance })
+            .Write("png");
+            return null;
+        }       
+        
         // GET: Recognitions/Details/5
         public ActionResult Details(int? id)
         {
